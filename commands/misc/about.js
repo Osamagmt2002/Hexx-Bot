@@ -22,7 +22,7 @@ module.exports = class AboutCommand extends Command {
           { name: 'Discord.js Version:', value: '12.2.0' },
           { name: 'Discord.js-Commando Name:', value: 'discord.js/Commando'},
           { name: 'Node.js Version:', value: '12.x'},
-          { name: 'Other Dependencies:', value: `discord.js,\ndiscord.js-commando,\ndiscord.js-minesweeper,\nexpress,\ngenius-lyrics,\nheroku,\npath,\nquick.db,\nrequest`},
+          { name: 'Other Dependencies:', value: `discord.js,\ndiscord.js-commando,\ndiscord.js-minesweeper,\nexpress,\ngenius-lyrics,\npath,\nquick.db,\nrequest,\n@ksoft/api`},
          )
         .setImage(message.member.user.avatarURL())
         .setTimestamp()

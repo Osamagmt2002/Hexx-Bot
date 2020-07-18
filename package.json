@@ -16,11 +16,9 @@
     "discord.js-minesweeper": "^1.0.5",
     "express": "^4.17.1",
     "genius-lyrics": "^3.0.0",
-    "heroku": "^7.42.2",
     "path": "^0.12.7",
     "quick.db": "^7.1.1",
-    "request": "^2.88.2",
-    "weather-js": "^2.0.0"
+    "request": "^2.88.2"
   },
   "engines": {
     "node": "12.x"
