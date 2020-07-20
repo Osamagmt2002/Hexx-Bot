@@ -8,6 +8,7 @@ dependencies:
   path: 0.12.7
   quick.db: 7.1.1
   request: 2.88.2
+  snekfetch: 4.0.4
 packages:
   /@aero/centra/1.0.4:
     dev: false
@@ -1212,6 +1213,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bCR6cP+aTdScaQCnQKbPKtJOKDp/hj9EDLJo3Nw4y1QksqaovlW/bnptB6/c1e+qmNIDHRK+oXFDdEqBT8WzUA==
+  /snekfetch/4.0.4:
+    deprecated: use node-fetch instead
+    dev: false
+    resolution:
+      integrity: sha512-dyycG9fvwtSJqKPfMVOpXt+60qvMGe7vWLwOJDiSJaiAx+hs2EnFChG2bXCWn7ulz+zGzrHdN9/yeEb0YqEPww==
   /sshpk/1.16.1:
     dependencies:
       asn1: 0.2.4
@@ -1467,3 +1473,4 @@ specifiers:
   path: ^0.12.7
   quick.db: ^7.1.1
   request: ^2.88.2
+  snekfetch: ^4.0.4

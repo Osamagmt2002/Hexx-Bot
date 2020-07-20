@@ -10,19 +10,19 @@ module.exports = class MemeCommand extends Command {
 		});
 	}
 
-	run(message) {
-    const memes = [
-      'https://cdn.discordapp.com/attachments/729711799930454069/729723758532624444/image.png',
-      'https://cdn.discordapp.com/attachments/729711799930454069/729722580667465768/hqdefault.png',
-      'https://cdn.discordapp.com/attachments/729711799930454069/729722254711193631/b914397520c2334da95a4dfbdd60200b.png',
-      'https://cdn.discordapp.com/attachments/729711799930454069/729721921176076288/9a2.png',
-      'https://cdn.discordapp.com/attachments/729711799930454069/729721655194157107/fetchimage.png',
-      'https://cdn.discordapp.com/attachments/729711799930454069/729721544321794068/205-2059748_patrick-patrickstar-spongebob-pinhead-orange-black-patrick-star.png',
-      'https://cdn.discordapp.com/attachments/729711799930454069/729721105165582346/images.png',
-      'https://cdn.discordapp.com/attachments/729711799930454069/729720817956421653/naruto-run.png',
-      'https://cdn.discordapp.com/attachments/729711799930454069/729720645402755192/hqdefault.png'
-    ]
-    var output = memes[Math.floor(Math.random()*memes.length)];
-    message.channel.send(`Here is your meme!`, { files: [output]})
-  }
+async run(bot, message) {
+  const { body } = await snekfetch
+    .get('https://www.reddit.com/r/dankmemes.json?sort=top&t=week')
+    .query({ limit: 800 });
+  const allowed = message.channel.nsfw ? body.data.children : body.data.children.filter(post => !post.data.over_18);
+  if (!allowed.length) return sg.channel.send('It seems we are out of fresh memes!, Try again later.');
+  const randomnumber = Math.floor(Math.random() * allowed.length)
+  const embed = new Discord.RichEmbed()
+  embed.setColor(`${colorhex}`)
+  embed.setTitle(allowed[randomnumber].data.title)
+  embed.setDescription("Posted by: " + allowed[randomnumber].data.author)
+  embed.setImage(allowed[randomnumber].data.url)
+  embed.addField("Other info:", "Up votes: " + allowed[randomnumber].data.ups + " / Comments: " + allowed[randomnumber].data.num_comments)
+  embed.setFooter("Memes provided by r/dankmemes")
+  message.channel.send(embed)
 };
