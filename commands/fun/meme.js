@@ -22,7 +22,7 @@ async run(message, args) {
         if (!allowed.length) return message.channel.send('It seems we are out of fresh memes!, Try again later.');
         const randomnumber = Math.floor(Math.random() * allowed.length)
         const embed = new Discord.MessageEmbed()
-        embed.setColor('#ff0000')
+        embed.setColor('#00FF00')
         embed.setTitle(allowed[randomnumber].data.title)
         embed.setDescription("Posted by: " + allowed[randomnumber].data.author)
         embed.setImage(allowed[randomnumber].data.url)
