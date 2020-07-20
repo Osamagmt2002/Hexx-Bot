@@ -11,7 +11,7 @@ module.exports = class NukeCommand extends Command {
           {
 			      key: 'user',
 			      prompt: 'Who would you like to nuke?',
-			      type: 'string',
+			      type: 'member',
 		    },
       ]
 		});
