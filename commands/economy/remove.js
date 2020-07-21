@@ -5,15 +5,14 @@ var money = require('discord-money');
 module.exports = class AddCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'add',
+			name: 'remove',
 			group: 'economy',
-			memberName: 'add',
-			description: 'Gives you as much as you want (administrator only).',
-      userPermissions: ['ADMINISTRATOR'],
+			memberName: 'remove',
+			description: 'Removes the amount of money chosen.',
       args: [
         {
           key: 'wanted',
-          prompt: 'How much money do you want to add to your balance?',
+          prompt: 'How much money do you want to remove to your balance?',
           type: 'integer',
         }
       ]
@@ -21,10 +20,10 @@ module.exports = class AddCommand extends Command {
 	}
   
   run(message, { wanted }) {
-    money.updateBal(message.author.id, wanted).then((i) => {
+    money.updateBal(message.author.id, -wanted).then((i) => {
       message.channel.send({embed: {
         color: 3447003,
-        description: `Received your **$${wanted}.** You should check \`r!balance\`.`,
+        description: `Removed **$${wanted}.** You should check \`r!balance\`.`,
         author: {
           name: `${message.author.username}#${message.author.discriminator}`,
           icon_url: message.author.avatarURL 
@@ -32,4 +31,4 @@ module.exports = class AddCommand extends Command {
       }});
     })
   }
-};
+}

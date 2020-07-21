@@ -19,7 +19,7 @@ module.exports = class DailyCommand extends Command {
       money.updateBal(message.author.id, 100).then((i) => { // The daily ends of the day, so everyday they can get a daily bonus, if they missed it, the  can't get it back again.
       message.channel.send({embed: {
         color: 3447003,
-        description: 'Recieved your **$100** \`r!daily`\. I think you should check \`r!balance\`.',
+        description: 'Recieved your **$100** \`r!daily`\. Maybe you should check \`r!balance\`.',
         author: {
           name: `${message.author.username}#${message.author.discriminator}`,
           icon_url: message.author.avatarURL 
