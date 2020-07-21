@@ -5,6 +5,7 @@ dependencies:
   discord.js-minesweeper: 1.0.5
   express: 4.17.1
   genius-lyrics: 3.0.0
+  give-me-a-joke: 0.3.2
   path: 0.12.7
   quick.db: 7.1.1
   request: 2.88.2
@@ -626,6 +627,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-l/tdlr/eiXMxPyDoKI75oWf6ZM4=
+  /give-me-a-joke/0.3.2:
+    dependencies:
+      body-parser: 1.19.0
+      express: 4.17.1
+      request: 2.88.2
+    dev: false
+    resolution:
+      integrity: sha512-crqm+UGdXSsZPiYJz1SpkHIl/LPd95UCCkku6UcJzeu73MCGZ1ND+tmv/hfRadHQpi8cupg5hI+LrKH6XD0QCQ==
   /har-schema/2.0.0:
     dev: false
     engines:
@@ -1470,6 +1479,7 @@ specifiers:
   discord.js-minesweeper: ^1.0.5
   express: ^4.17.1
   genius-lyrics: ^3.0.0
+  give-me-a-joke: ^0.3.2
   path: ^0.12.7
   quick.db: ^7.1.1
   request: ^2.88.2
