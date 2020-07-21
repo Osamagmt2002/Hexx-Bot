@@ -14,7 +14,7 @@ module.exports = class JokeCommand extends Command {
 
 	run(message) {
     giveMeAJoke.getRandomDadJoke(function(joke){
-        message.channel.send(joke)
+       message.channel.send(`${joke}`) 
     })
   }
 };
