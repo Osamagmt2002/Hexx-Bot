@@ -1,7 +1,8 @@
 const { Command } = require('discord.js-commando');
-var 
+var giveMeAJoke = require('give-me-a-joke');
+const Discord = require("discord.js");
 
-module.exports = class NukeCommand extends Command {
+module.exports = class JokeCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'joke',
@@ -11,8 +12,9 @@ module.exports = class NukeCommand extends Command {
 		});
 	}
 
-	run(message, { user }) {
-    message.reply(`Nuked ${user}!`)
-    message.channel.send(`${user}, you have been nuked by ${message.author}.`, { files: ["https://media.giphy.com/media/XrNry0aqYWEhi/giphy.gif"] });
+	run(message) {
+    giveMeAJoke.getRandomDadJoke(function(joke){
+        message.channel.send(joke)
+    })
   }
 };

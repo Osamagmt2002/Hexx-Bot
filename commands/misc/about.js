@@ -20,9 +20,9 @@ module.exports = class AboutCommand extends Command {
         .setThumbnail(message.member.user.avatarURL())
         .addFields(
           { name: 'Discord.js Version:', value: '12.2.0' },
-          { name: 'Discord.js-Commando Name:', value: 'discord.js/Commando'},
+          { name: 'Discord.js-Commando Name:', value: 'discordjs/Commando'},
           { name: 'Node.js Version:', value: '12.x'},
-          { name: 'Other Dependencies:', value: `discord.js,\ndiscord.js-commando,\ndiscord.js-minesweeper,\nexpress,\ngenius-lyrics,\npath,\nquick.db,\nrequest,\n@ksoft/api`},
+          { name: 'Other Dependencies:', value: `discord.js,\ndiscord.js-commando,\ndiscord.js-minesweeper,\nexpress,\ngenius-lyrics,\npath,\nquick.db,\nrequest,\n@ksoft/api\ngive-me-a-joke.`},
          )
         .setImage(message.member.user.avatarURL())
         .setTimestamp()
