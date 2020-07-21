@@ -15,7 +15,8 @@ client.registry
     .registerGroups([
         ['admin', 'Admin-Only Commands'],
         ['misc', 'Important or Not-Important Stuff.'],
-        ['fun', 'Fun Commands!']
+        ['fun', 'Fun Commands!'],
+        ['economy', 'Money Commands!']
     ])
     .registerDefaultGroups()
     .registerDefaultCommands()
