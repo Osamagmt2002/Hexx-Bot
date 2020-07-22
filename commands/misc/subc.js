@@ -1,3 +1,4 @@
+// NOT MINE
 const { Command } = require('discord.js-commando');
 const { RichEmbed } = require('discord.js');
 
@@ -7,7 +8,7 @@ module.exports = class SubCountCommand extends Command {
             name: 'subc',
             group: 'misc',
             memberName: 'subc',
-            description: 'Shows GenerationShops#9825\'s sub count.',
+            description: 'Shows Milky Way#9825\'s sub count.',
         });    
     }
 

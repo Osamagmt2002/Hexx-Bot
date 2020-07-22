@@ -1,3 +1,4 @@
+// NOT MINE
 const { Command } = require('discord.js-commando');
 const Discord = require('discord.js');
 const snekfetch = require('snekfetch');

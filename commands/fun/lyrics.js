@@ -1,3 +1,4 @@
+// NOT MINE
 const { Command } = require('discord.js-commando');
 
 module.exports = class LyricsCommand extends Command {

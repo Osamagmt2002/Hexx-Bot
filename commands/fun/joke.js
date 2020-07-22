@@ -1,3 +1,4 @@
+// USING API
 const { Command } = require('discord.js-commando');
 var giveMeAJoke = require('give-me-a-joke');
 const Discord = require("discord.js");
