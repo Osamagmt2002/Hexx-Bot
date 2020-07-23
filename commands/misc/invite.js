@@ -12,7 +12,7 @@ module.exports = class InviteCommand extends Command {
     }
 
     run(message, args, { client }) {
-      message.channel.send(`Link: https://discord.com/oauth2/authorize?client_id=${client.me.id}&scope=bot&permissions=8`)
+      message.channel.send(`Link: https://discord.com/oauth2/authorize?client_id=729714988318720061&scope=bot&permissions=8`)
       message.channel.send('Use it to invite this bot.')
     }
 };
