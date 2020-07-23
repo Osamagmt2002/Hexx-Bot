@@ -7,12 +7,12 @@ module.exports = class InviteCommand extends Command {
             name: 'invite',
             group: 'misc',
             memberName: 'invite',
-            description: 'Sends support server invite link in embed form.',
+            description: 'Sends bot invite.',
         });    
     }
 
-    run(msg, args) {
-    msg.channel.send(`My support server is https://discord.gg/YHTRn2N ,\nWhenever you need help, join that server and use Hexx Modmail or the support channel.`)
-            
+    run(message, args, { client }) {
+      message.channel.send(`Link: https://discord.com/oauth2/authorize?client_id=${client.me.id}&scope=bot&permissions=8`)
+      message.channel.send('Use it to invite this bot.')
     }
 };
