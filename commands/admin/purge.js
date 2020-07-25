@@ -26,7 +26,5 @@ module.exports = class KickCommand extends Command {
     await msg.channel.messages.fetch({ limit: amount }).then(messages => { // Fetches the messages
         msg.channel.bulkDelete(messages // Bulk deletes all messages that have been fetched and are not older than 14 days (due to the Discord API)
     )});
-    
-    msg.channel.send(`Successfully deleted ${amount} messages.`)
   }
 }
