@@ -8,8 +8,9 @@ module.exports = class WarnCommand extends Command {
     super(client, {
       name: "warn",
       group: "admin",
-      examples: "warn <@mention> <reason>",
+      examples: ["warn <@mention> <reason>"],
       description: "Warn anyone who do not obey the rules",
+      memberName: "warn",
       userPermissions: ['ADMINISTRATOR'],
     });
   }
