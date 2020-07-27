@@ -16,6 +16,7 @@
     "discord.js-commando": "github:discordjs/Commando#bdbd84e2a978322f3af12c21e729eb7b7cd4a3dc",
     "discord.js-minesweeper": "^1.0.5",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "genius-lyrics": "^3.0.0",
     "give-me-a-joke": "^0.3.2",
     "moment": "^2.27.0",

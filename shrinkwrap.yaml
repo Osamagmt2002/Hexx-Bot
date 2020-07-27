@@ -5,6 +5,7 @@ dependencies:
   discord.js-commando: github.com/discordjs/Commando/bdbd84e2a978322f3af12c21e729eb7b7cd4a3dc
   discord.js-minesweeper: 1.0.5
   express: 4.17.1
+  fs: 0.0.1-security
   genius-lyrics: 3.0.0
   give-me-a-joke: 0.3.2
   moment: 2.27.0
@@ -641,6 +642,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
+  /fs/0.0.1-security:
+    dev: false
+    resolution:
+      integrity: sha1-invTcYa23d84E/I4WLV+yq9eQdQ=
   /fstream/1.0.12:
     dependencies:
       graceful-fs: 4.2.4
@@ -1753,6 +1758,7 @@ specifiers:
   discord.js-commando: 'github:discordjs/Commando#bdbd84e2a978322f3af12c21e729eb7b7cd4a3dc'
   discord.js-minesweeper: ^1.0.5
   express: ^4.17.1
+  fs: 0.0.1-security
   genius-lyrics: ^3.0.0
   give-me-a-joke: ^0.3.2
   moment: ^2.27.0
