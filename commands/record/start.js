@@ -22,7 +22,7 @@ module.exports = class StartCommand extends Command {
     if (!msg.guild) {
       return msg.reply('No private service is available in your area at the moment. Please contact a service representative for more details.');
     }
-    const voiceChannel = msg.guild.channels.find("Record", channelName.join(" "));
+    const voiceChannel = msg.guild.channels.cache.find("Record", channelName.join(" "));
     //console.log(voiceChannel.id);
     if (!voiceChannel || voiceChannel.type !== 'voice') {
       return msg.reply(`I couldn't find the channel ${channelName}. Can you spell?`);

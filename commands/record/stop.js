@@ -19,7 +19,7 @@ module.exports = class StopCommand extends Command {
         return fs.createWriteStream(fileName);
       }
       let [command, ...channelName] = msg.content.split(" ");
-      let voiceChannel = msg.guild.channels.find("Record", channelName.join(" "));
+      let voiceChannel = msg.guild.channels.find("name", channelName.join(" "));
       voiceChannel.leave();
       
     }
