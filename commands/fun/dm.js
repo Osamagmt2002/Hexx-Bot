@@ -25,5 +25,6 @@ module.exports = class SayCommand extends Command {
 
     run(msg, { user, content }) {
         return user.send(content + ` - ${msg.author}`);
+        return msg.channel.send(`Sent message to ${user} containing: ${content}.`)
     }
 };

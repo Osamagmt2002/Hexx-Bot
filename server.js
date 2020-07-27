@@ -24,7 +24,7 @@ client.registry
 
 client.on('ready', () => {
     console.log(`Logged in to ${client.user.tag}!`);
-    client.user.setActivity(`https://disc.gg/hexxOfficial`);
+    client.user.setActivity(`with the command ${client.commandPrefix}help.`);
 });
 
 const db = require("quick.db") //using quick.db package
