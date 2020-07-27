@@ -1,5 +1,5 @@
 const { Command } = require('discord.js-commando');
-const { RichEmbed } = require('discord.js');
+const Discord = require('discord.js');
 
 module.exports = class EmbedCommand extends Command {
     constructor(client) {
@@ -20,10 +20,11 @@ module.exports = class EmbedCommand extends Command {
     }
 
     run(msg, args) {
+        const user = msg.mentions.users.first() || msg.author;
         const { text } = args;
-        const embed = new RichEmbed()
+        const embed = new Discord.MessageEmbed()
             .setDescription(text)
-            .setAuthor(msg.author.username, msg.author.displayAvatarURL)
+            .setAuthor(msg.author.username, user.avatarURL)
             .setColor(0x00AE86)
             .setTimestamp();
         return msg.embed(embed);
