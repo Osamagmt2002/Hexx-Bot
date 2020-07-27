@@ -12,15 +12,7 @@ module.exports = class StopCommand extends Command {
         });    
     }
 
-    run(msg) {
-      function generateOutputFile(channel, member) {
-        // use IDs instead of username cause some people have stupid emojis in their name
-        const fileName = `./recordings/${channel.id}-${member.id}-${Date.now()}.pcm`;
-        return fs.createWriteStream(fileName);
-      }
-      let [command, ...channelName] = msg.content.split(" ");
-      let voiceChannel = msg.guild.channels.find("name", channelName.join(" "));
-      voiceChannel.leave();
-      
+    run(message) {
+      message.leaveVoiceChannel(message.author.voiceChannel);
     }
 };
