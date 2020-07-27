@@ -2,17 +2,17 @@ const { Command } = require('discord.js-commando');
 const Discord = require('discord.js');
 const fs = require('fs');
 
-module.exports = class AboutCommand extends Command {
+module.exports = class StartCommand extends Command {
     constructor(client) {
         super(client, {
-            name: 'record',
+            name: 'start',
             group: 'record',
-            memberName: 'record',
-            description: 'Records your beautiful voice!',
+            memberName: 'start',
+            description: 'Starts recording your beautiful voice!',
         });    
     }
 
-    run(message) {
+    run(msg) {
       function generateOutputFile(channel, member) {
         // use IDs instead of username cause some people have stupid emojis in their name
         const fileName = `./recordings/${channel.id}-${member.id}-${Date.now()}.pcm`;
@@ -20,9 +20,9 @@ module.exports = class AboutCommand extends Command {
       }
       let [command, ...channelName] = msg.content.split(" ");
     if (!msg.guild) {
-      return msg.reply('no private service is available in your area at the moment. Please contact a service representative for more details.');
+      return msg.reply('No private service is available in your area at the moment. Please contact a service representative for more details.');
     }
-    const voiceChannel = msg.guild.channels.find("name", channelName.join(" "));
+    const voiceChannel = msg.guild.channels.find("Record", channelName.join(" "));
     //console.log(voiceChannel.id);
     if (!voiceChannel || voiceChannel.type !== 'voice') {
       return msg.reply(`I couldn't find the channel ${channelName}. Can you spell?`);
