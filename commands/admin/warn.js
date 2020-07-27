@@ -14,7 +14,11 @@ module.exports = class WarnCommand extends Command {
       userPermissions: ['ADMINISTRATOR'],
     });
   }
-  async run (message, args) {
+  async run (message) {
+    const prefix = "h!"
+    
+    const args = message.content.slice(prefix.length).trim().split(' ');
+    
     const user = message.mentions.members.first()
     
     if(!user) {
@@ -42,7 +46,7 @@ module.exports = class WarnCommand extends Command {
     let warnings = db.get(`warnings_${message.guild.id}_${user.id}`)
     
     if(warnings === 3) {
-      return message.channel.send(`${message.mentions.users.first().username} already reached his/her limit with 3 warnings.`)
+      return message.channel.send(`${message.mentions.members.first().username} already reached his/her limit with 3 warnings.`)
     }
     
     if(warnings === null) {
@@ -52,7 +56,7 @@ module.exports = class WarnCommand extends Command {
     } else if(warnings !== null) {
         db.add(`warnings_${message.guild.id}_${user.id}`, 1)
        user.send(`You have been warned in **${message.guild.name}** for ${reason}.`)
-      await message.channel.send(`You warned **${message.mentions.users.first().username}** for ${reason}.`)
+      await message.channel.send(`You warned ${reason}.`)
     }
     
   
