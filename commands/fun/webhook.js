@@ -10,11 +10,6 @@ module.exports = class WebhookCommand extends Command {
 			description: 'Sends a webhook message.',
       args: [
           {
-			      key: 'webhook',
-			      prompt: 'What is the channel id where you want to send the message?',
-			      type: 'integer',
-		    },
-          {
             key: 'token',
             prompt: 'What is the webhook token?',
             type: 'string',
@@ -27,7 +22,7 @@ module.exports = class WebhookCommand extends Command {
           {
             key: 'username',
             prompt: 'What do you want the webhook username to be?',
-            type: 'integer',
+            type: 'string',
           },
           {
             key: 'image',
@@ -48,22 +43,17 @@ module.exports = class WebhookCommand extends Command {
 		});
 	}
 
-	async run(message, { webhook, token, id, username, image, hex }) {
-    const channel = this.client.channels.cache.get(webhook);
+	async run(message, { token, id, username, image, hex, title }) {
+    const webhookClient = new Discord.WebhookClient(id, token);
+    
     const embed = new Discord.MessageEmbed()
-	    .setTitle('Some Title')
+	    .setTitle(title)
 	    .setColor(hex);
-	try {
-		const webhooks = await channel.fetchWebhooks();
-		const webhook = webhooks.first();
-
-		await webhook.send('Message', {
+		
+		 webhookClient.send('Message', {
 			username: username,
 			avatarURL: image,
 			embeds: [embed],
 		});
-	} catch (error) {
-		console.error('Error trying to send: ', error);
-	}
   }
 };
