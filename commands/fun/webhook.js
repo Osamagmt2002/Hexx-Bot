@@ -46,16 +46,14 @@ module.exports = class WebhookCommand extends Command {
 	}
 
 	run(message, { token, id, username, image, hex, title }) {
-
+    const embed = new Discord.MessageEmbed()
+	    .setTitle(title)
+	    .setColor(hex);
   
     Hook.login(id, token);
     Hook.setPayload({
       "embeds": [{
-        "title": title,
-        "color": hex,
-        username: username,
-			  avatarURL: image,
-			  embeds: [embed]
+        
       }]
     })
   }
