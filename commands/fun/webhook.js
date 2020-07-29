@@ -53,7 +53,9 @@ module.exports = class WebhookCommand extends Command {
     Hook.login(id, token);
     Hook.setPayload({
       "embeds": [{
-        
+        username: username,
+			  avatarURL: image,
+			  embeds: [embed],
       }]
     })
   }
