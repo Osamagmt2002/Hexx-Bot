@@ -1,7 +1,5 @@
 const { Command } = require('discord.js-commando');
 const Discord = require('discord.js');
-const hookcord = require('hookcord');
-const Hook = new hookcord.Hook()
 
 module.exports = class WebhookCommand extends Command {
 	constructor(client) {
@@ -45,18 +43,17 @@ module.exports = class WebhookCommand extends Command {
 		});
 	}
 
-	run(message, { token, id, username, image, hex, title }) {
+	async run(message, { token, id, username, image, hex, title }) {
+    const webhookClient = new Discord.WebhookClient(id, token);
+    
     const embed = new Discord.MessageEmbed()
 	    .setTitle(title)
 	    .setColor(hex);
-  
-    Hook.login(id, token);
-    Hook.setPayload({
-      "embeds": [{
-        username: username,
-			  avatarURL: image,
-			  embeds: [embed],
-      }]
-    })
+		
+		 webhookClient.send('Message', {
+			username: username,
+			avatarURL: image,
+			embeds: [embed],
+		});
   }
 };

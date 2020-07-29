@@ -20,7 +20,6 @@
     "fs": "0.0.1-security",
     "genius-lyrics": "^3.0.0",
     "give-me-a-joke": "^0.3.2",
-    "hookcord": "^2.0.2",
     "moment": "^2.27.0",
     "path": "^0.12.7",
     "quick.db": "^7.1.1",
