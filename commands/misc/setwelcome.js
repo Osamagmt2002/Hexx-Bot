@@ -8,7 +8,8 @@ module.exports = class SetWelcomeCommand extends Command {
           name: 'setwelcome',
           group: 'misc',
           memberName: 'setwelcome',
-          description: 'Sets the welcome channel.'
+          description: 'Sets the welcome channel. ADMINISTRATOR ONLY',
+          userPermissions: ['ADMINISTRATOR']
         });
     }
               

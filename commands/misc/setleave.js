@@ -8,7 +8,8 @@ module.exports = class SetLeaveCommand extends Command {
           name: 'setleave',
           group: 'misc',
           memberName: 'setleave',
-          description: 'Sets the leave channel.'
+          description: 'Sets the leave channel. ADMINISTRATOR ONLY',
+          userPermissions: ['ADMINISTRATOR']
         });
     }
               
