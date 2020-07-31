@@ -24,7 +24,7 @@ module.exports = class AddCommand extends Command {
     money.updateBal(message.author.id, wanted).then((i) => {
       message.channel.send({embed: {
         color: 3447003,
-        description: `Received your **$${wanted}.** You should check \`r!balance\`.`,
+        description: `Received your **$${wanted}.** You should check \`h!balance\`.`,
         author: {
           name: `${message.author.username}#${message.author.discriminator}`,
           icon_url: message.author.avatarURL 
