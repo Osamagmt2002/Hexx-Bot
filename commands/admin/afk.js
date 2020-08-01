@@ -17,8 +17,8 @@ module.exports = class AFKCommand extends Command {
 		});
 	}
 
-	run(message, { reason }) {
-    message.reply(`Alright! You are now afk for ${reason}.`)
-    message.member.setNickname(`AFK: ${message.author}`)
+	async run(message, { reason }) {
+		await message.member.setNickname(`AFK: ${message.member.tag}`);
+    message.channel.send(message.member.tag + ` is now AFK due to ${reason}!`);
   }
 };
