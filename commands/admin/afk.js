@@ -1,4 +1,5 @@
 const { Command } = require('discord.js-commando');
+const db = require('quick.db');
 
 module.exports = class AFKCommand extends Command {
 	constructor(client) {
@@ -18,7 +19,16 @@ module.exports = class AFKCommand extends Command {
 	}
 
 	async run(message, { reason }) {
-		await message.member.setNickname(`AFK: ${message.author.tag}`);
-    message.channel.send(message.author.tag + ` is now AFK for ${reason}!`)
+    const afk = db.get(`afk_${message.guild.id}_${message.author.id}`)
+    
+    if(afk === null) {
+      db.set(`afk_${message.guild.id}_${message.author.id}`, 1)
+      message.channel.send(message.author.tag + ` is now AFK for ${reason}!`)
+      await message.member.setNickname(`AFK: ${message.author.tag}`);
+    }
+    
+    if(afk === 1) {
+      message.channel.send('You are already AFK!')
+    }
   }
 };
