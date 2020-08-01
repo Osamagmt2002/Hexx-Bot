@@ -1,10 +1,11 @@
 const { Command } = require('discord.js-commando');
 const db = require('quick.db');
-module.exports = class AFKCommand extends Command {
+
+module.exports = class UnAFKCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'unafk',
-			group: 'admin',
+			group: 'afk',
 			memberName: 'unafk',
 			description: 'You stop being afk with this command. Can be used by anyone.',
 		});

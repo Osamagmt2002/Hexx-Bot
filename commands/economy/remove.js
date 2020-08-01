@@ -2,7 +2,7 @@ const { Command } = require('discord.js-commando');
 const Discord = require('discord.js');
 var money = require('discord-money');
 
-module.exports = class AddCommand extends Command {
+module.exports = class RemoveCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'remove',

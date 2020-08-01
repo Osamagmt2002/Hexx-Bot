@@ -5,7 +5,7 @@ module.exports = class AFKCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'afk',
-			group: 'admin',
+			group: 'afk',
 			memberName: 'afk',
 			description: 'You become AFK for whatever reason. Can be used by anyone.',
       args: [
