@@ -1,3 +1,5 @@
+[![Run on Repl.it](https://repl.it/badge/github/jlbubbles092/Hexx-Bot)](https://repl.it/github/jlbubbles092/Hexx-Bot)
+
 # Hexx Bot
 
 A bot that has lots of commands and is fun and has moderation commands.
