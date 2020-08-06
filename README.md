@@ -23,4 +23,4 @@ Click `Show` in the header to see the app live. Updates to your code will instan
 
 **hexx offical discord** is a friendly server that makes hexx bots.
 
-( ᵔ ᴥ ᵔ )
+( ᵔ ᴥ ᵔ )# Hexx-Bot
